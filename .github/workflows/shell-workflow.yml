@@ -10,8 +10,8 @@ jobs:
 
         steps:
             - name: Checkout Code
-              uses: actions/@checkout@2
-              
+              uses: actions/checkout@v2
+
             - name: Run Script with parameters
               run: |
                 ls
