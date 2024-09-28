@@ -20,9 +20,14 @@ jobs:
     run-script-in-workflow:  
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout Code
+          uses: actions/checkout@v2
+
         - name: Make script executable in the workflow
           run: chmod -x .github/workflows/script.sh
 
+        - name: Execute shell script in the workflow dir
+          run:  .github/workflows/script.sh "para1" "param2"
 
 
 
