@@ -9,6 +9,9 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout Code
+              uses: actions/@checkout@2
+              
             - name: Run Script with parameters
               run: |
                 ls
