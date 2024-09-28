@@ -5,17 +5,27 @@ on:
         branches:
             - main
 jobs:
-    run-script:
-        runs-on: ubuntu-latest
+    # run-script:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: Checkout Code
+    #           uses: actions/checkout@v2
 
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v2
+    #         - name: Run Script with parameters
+    #           run: |
+    #             ls
+    #             chmod +x ./script.sh
+    #             ./script.sh "para1" "param2"
 
-            - name: Run Script with parameters
-              run: |
-                ls
-                chmod +x ./script.sh
-                ./script.sh "para1" "param2"
+    run-script-in-workflow:  
+      runs-on: ubuntu-latest
+      steps:
+        - name: Make script executable in the workflow
+          run: chmod -x .github/workflows/script.sh
+
+
+
+
+                
 
         
