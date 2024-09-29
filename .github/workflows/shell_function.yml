@@ -1,0 +1,20 @@
+name: Shell Executor Test
+run-name: ${{ github.actor }} is testing shell execution
+on:
+    push:
+        branches:
+            - main
+jobs:
+    run-script:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+
+            - name: Run Script with parameters
+              run: |
+                greet() {
+                    echo "Hello, $1!"
+                }
+                
+                greet "Isaac"
