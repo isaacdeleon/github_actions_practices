@@ -1,5 +1,5 @@
-name: Shell Executor Test
-run-name: ${{ github.actor }} is testing shell execution
+name: Shell Function Test
+run-name: ${{ github.actor }} is testing shell functions
 on:
     push:
         branches:
