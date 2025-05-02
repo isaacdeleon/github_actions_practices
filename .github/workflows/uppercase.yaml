@@ -25,9 +25,9 @@ on:
 jobs:
   deploy-job:
     runs-on: ubuntu-latest
-    steps: ${{ github.event.inputs.environment^^ }} == 'PROD'
+    steps: 
       - name: Mostrar parámetros
-        if: 
+        if: ${{ github.event.inputs.environment^^ == 'PROD' }}
         run: |
           echo "Entorno seleccionado: ${{ github.event.inputs.environment }}"
           echo "Versión: ${{ github.event.inputs.version }}"
