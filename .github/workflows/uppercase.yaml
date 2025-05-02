@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Mostrar parámetros
-        if: ${{ github.event.inputs.environment == 'PROD' }}
+        if: ${{ github.event.inputs.environment.toUpperCase() == 'PROD' }}
         run: |
           echo "Entorno seleccionado: ${{ github.event.inputs.environment }}"
           echo "Versión: ${{ github.event.inputs.version }}"
